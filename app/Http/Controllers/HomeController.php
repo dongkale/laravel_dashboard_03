@@ -61,11 +61,19 @@ class HomeController extends Controller
         return view("home", ["data" => "Setting Menu"]);
     }
 
-    public function Tasks()
+    public function statisticsUser()
     {
         View::share("mainMenuCode", "MENU_3");
-        View::share("subMenuCode", "Tasks");
+        View::share("subMenuCode", "statisticsUser");
 
-        return view("home", ["data" => "Tasks Menu"]);
+        return view("home", ["data" => "statisticsUser  Menu"]);
+    }
+
+    public function tasks()
+    {
+        View::share("mainMenuCode", "MENU_4");
+        View::share("subMenuCode", "tasks");
+
+        return view("home", ["data" => "tasks Menu"]);
     }
 }

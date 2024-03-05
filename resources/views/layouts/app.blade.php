@@ -136,7 +136,7 @@ function sidebarCollapse () {
 }
 
 $('.collapse').on('show.bs.collapse', function() {
-    //$(this).slideDown(200);
+    $(this).slideDown(200);
 
     // var __v = $(this).prop("class");;
     // console.log($(this).prop("class"););
@@ -162,7 +162,7 @@ $('.collapse').on('show.bs.collapse', function() {
     // console.log('show');
 
 }).on('hide.bs.collapse', function() {
-    //$(this).slideUp(200);
+    $(this).slideUp(200);
 
     // console.log($(this).prop("class"));
     // console.log('hide');
@@ -185,20 +185,56 @@ $('.list-group-item').click(function(){
     // $('.collapse').not(submenu).collapse('hide');
 });
 
+///*
 $('.list-group > a').click(function () {
-	$('.sidebar-submenu').slideUp(200);
-	if ($(this).parent().hasClass('active')) {
-		$('.sidebar-dropdown').removeClass('active');
-		$(this).parent().removeClass('active');
-        console.log('show ===');
-	} else {
-		$('.sidebar-dropdown').removeClass('active');
-		$(this).next('.sidebar-submenu').slideDown(200);
-		$(this).parent().addClass('active');
-        console.log('hide ===');
-	}
-});
+    var that = $(this);
+	// $('.sidebar-submenu').slideUp(200);
 
+	// if ($(this).parent().hasClass('active')) {
+	// 	$('.sidebar-dropdown').removeClass('active');
+	// 	$(this).parent().removeClass('active');        
+    //     console.log('show ===');
+	// } else {
+	// 	$('.sidebar-dropdown').removeClass('active');
+	// 	$(this).next('.sidebar-submenu').slideDown(200);
+	// 	$(this).parent().addClass('active');        
+    //     console.log('hide ===');
+	// }
+
+    console.log(`Active: ${that.prop("id")}`);
+
+    // $('.sidebar-submenu').slideUp(200);
+
+	if (that.parent().hasClass('active')) {
+	// 	$('.sidebar-dropdown').removeClass('active');
+	 	//$(this).parent().removeClass('active');
+        // $(this).parent().removeClass('show');
+        //console.log('show ===');
+	} else {
+	// 	$('.sidebar-dropdown').removeClass('active');
+	 	// that.next('.sidebar-submenu').slideDown(200);
+	 	// $(this).parent().addClass('active');
+        // $(this).parent().addClass('show');
+        //console.log('hide ===');
+	}
+
+    $('.list-group > a.top-menu').not(that).each(function(){
+        var that = $(this);
+        console.log(`Inactive: ${that.prop("id")}`);
+        // that.collapse('hide');
+
+        // // 서브 메뉴도 닫기
+        // $(this).find('.collapse').each(function(){
+        //     var that = $(this);
+        //     that.removeClass('select');
+        // });        
+    });
+
+    $('.collapse').not($(this)).collapse('hide');
+});
+//*/
+// ------------------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------------------
 
 // function BTN_TEST() {    
 //     // $('.collapse').collapse('hide');

@@ -31,4 +31,9 @@ Route::get("/Tables", [App\Http\Controllers\HomeController::class, "Tables"]);
 
 Route::get("/Setting", [App\Http\Controllers\HomeController::class, "Setting"]);
 
-Route::get("/Tasks", [App\Http\Controllers\HomeController::class, "Tasks"]);
+Route::get("/statisticsUser", [
+    App\Http\Controllers\HomeController::class,
+    "statisticsUser",
+]);
+
+Route::get("/tasks", [App\Http\Controllers\HomeController::class, "tasks"]);

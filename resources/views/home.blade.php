@@ -3,16 +3,11 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-4">
         <div class="card">
-            <div>Some text here ==> {{$data}}</div>
+            <div>Select Menu ==> {{$data}}</div>
         </div>
-    </div>
-    <div class="col-md-2">
-        <div class="card">
-            <div>Some text here</div>
-        </div>
-    </div>
+    </div>    
 </div>
 
 <div class="row">
